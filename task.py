@@ -3,6 +3,7 @@ from typing import Dict
 from sympy import symbols
 from sympy.core.backend import sympify
 from sympy import diff
+from sympy import integrate
 # Controlla il file readme.md per i dettagli su ciascun sub-task
 
 def calcola_derivata(espressione: str, variabile: str) -> sympy.Expr:
@@ -14,6 +15,9 @@ def calcola_derivata(espressione: str, variabile: str) -> sympy.Expr:
     pass
 
 def calcola_integrale_definito(espressione: str, variabile: str, estremo_inf: float, estremo_sup: float) -> sympy.Expr:
+    x = symbols(variabile)
+    f = sympify(espressione)
+    return float(integrate(f,(x,estremo_inf,estremo_sup)))
     """Sub-task 2: Calcolare un Integrale Definito."""
     pass
 
