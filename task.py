@@ -1,9 +1,15 @@
 import sympy
 from typing import Dict
-
+from sympy import symbols
+from sympy.core.backend import sympify
+from sympy import diff
 # Controlla il file readme.md per i dettagli su ciascun sub-task
 
 def calcola_derivata(espressione: str, variabile: str) -> sympy.Expr:
+    x=symbols(variabile)
+    f=sympify(espressione)
+    return diff(f,x)
+
     """Sub-task 1: Calcolare una Derivata."""
     pass
 
