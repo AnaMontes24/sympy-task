@@ -4,6 +4,7 @@ from sympy import symbols
 from sympy.core.backend import sympify
 from sympy import diff
 from sympy import integrate
+from sympy import limit
 # Controlla il file readme.md per i dettagli su ciascun sub-task
 
 def calcola_derivata(espressione: str, variabile: str) -> sympy.Expr:
@@ -22,6 +23,12 @@ def calcola_integrale_definito(espressione: str, variabile: str, estremo_inf: fl
     pass
 
 def calcola_limite(espressione: str, variabile: str, punto: str) -> sympy.Expr:
+    x = symbols(variabile)
+    f = sympify(espressione)
+    p=eval(punto)
+    return limit(f,x,p)
+
+
     """Sub-task 3: Calcolare un Limite."""
     pass
 
